@@ -1,0 +1,16 @@
+services:
+  postgre:
+    image: postgres
+    restart: always
+    hostname: pgdb
+    environment:
+      POSTGRES_USER: mytestuser
+      POSTGRES_PASSWORD: mytestpass
+      POSTGRES_DB: banking
+  app:
+    image: banking:1.0.0
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgre

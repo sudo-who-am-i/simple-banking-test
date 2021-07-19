@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://pgdb:5432/banking
+    username: mytestuser
+    password: mytestpass
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8080
